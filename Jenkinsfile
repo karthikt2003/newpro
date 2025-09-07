@@ -1,7 +1,6 @@
 pipeline {
     agent any
     tools {
-        // 👇 Change this if your Jenkins Maven tool has a different name
         maven 'Maven-3.9.11'
     }
     environment {
@@ -11,7 +10,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/karthikt2003/newpro.git'
+                git branch: 'main', url: 'https://github.com/karthikt2003/newpro.git'
             }
         }
         stage('Build with Maven') {
